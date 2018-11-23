@@ -1,0 +1,32 @@
+html, body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #f2f2f2;
+}
+
+.page-wrapper{
+  height: 600px;
+  width: 80%;
+  margin: auto;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+.hoc1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hoc2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.part{
+  width: 20px;
+}
+.middle{
+  width: 100%;
+  height: 50px;
+}
