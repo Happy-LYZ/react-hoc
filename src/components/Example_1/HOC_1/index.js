@@ -9,7 +9,7 @@ function HOC_1(WrappedComponent, key) {
       super(props);
       console.log("HOC constructor"); // eslint-disable-line
       this.state = {
-        fields: {}
+        value: ''
       };
     }
 
@@ -17,26 +17,25 @@ function HOC_1(WrappedComponent, key) {
       console.log("HOC componentWillMount"); // eslint-disable-line
     }
 
-    onChange = fieldName => e => {
-      const { fields } = this.state;
-      fields[fieldName] = e.target.value;
+    onInputChange = e => {
       this.setState({
-        fields
+        value: e.target.value
       });
     };
 
-    getValue = fieldName => {
-      return this.state.fields[fieldName];
+    getValue = () => {
+      return this.state.value;
     };
 
     render() {
       const props = {
         ...this.props,
-        onChange: this.onChange,
-        getValue: this.getValue
+        onInput: this.onInputChange,
+        value: this.state.value,
+        getValue: this.getValue,
       };
       console.log("this.props", props);
-      return <WrappedComponent {...props} />;
+      return <WrappedComponent {...props} addProps={'I am Added Props by HOC'} />;
     }
   };
 }

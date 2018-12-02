@@ -18,16 +18,14 @@ class Age extends React.Component {
   render() {
     return (
       <div>
-        <p>
-            <p>年龄：{this.props.getValue("age")}</p>
+          <p>年龄：{this.props.getValue()}</p>
           <input
             id="input-age"
             type="text"
             placeholder="输入年龄"
-            onChange={this.props.onChange("age")}
-            value={this.props.getValue("age")}
+            {...this.props}
           />
-        </p>
+          <p>追加的props: {this.props.addProps}</p>
       </div>
     );
   }
